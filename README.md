@@ -1,1 +1,1 @@
-# Bitcoin fee alerts API
+# Bitcoin fees app API
