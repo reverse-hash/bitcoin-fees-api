@@ -7,8 +7,8 @@ const LESS_THAN_6H_HEIGHT = 35;
 const LESS_THAN_24H_HEIGHT = 143;
 
 const URL = 'http://' + process.env.BITCOIND_HOST;
-const USER = process.env.BITCOIND_RPCUSER;
-const PASS = process.env.BITCOIND_RPCPASS;
+const USER = process.env.BITCOIND_RPC_USER;
+const PASS = process.env.BITCOIND_RPC_PASS;
 const PORT = process.env.BITCOIND_PORT;
 const TIMEOUT = 10000;
 
