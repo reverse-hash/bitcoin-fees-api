@@ -7,15 +7,13 @@ import https from 'https';
 import estimatedFees from './estimated-fees.js';
 import { health } from './health.js';
 
-var privateKey = fs.readFileSync('./ssl/privatekey.pem');
-var certificate = fs.readFileSync('./ssl/certificate.pem');
+var key = fs.readFileSync('./ssl/domain.key'); // Domain private key
+var cert = fs.readFileSync('./ssl/domain.crt'); // Domain certificate
+var ca = fs.readFileSync('./ssl/ca.crt'); // Authority certificate
 
 const app = express();
 
-const options = {
-  key: privateKey,
-  cert: certificate,
-};
+const options = { key, cert, ca };
 
 app.use(cors());
 
