@@ -4,6 +4,6 @@ export function setStatus(newStatus) {
   status = newStatus;
 }
 
-export function getStatus() {
-  return status;
+export function health() {
+  return { status };
 }
