@@ -10,15 +10,10 @@ var certificate = fs.readFileSync('./ssl/certificate.pem');
 
 const app = express();
 
-https
-  .createServer(
-    {
-      key: privateKey,
-      cert: certificate,
-    },
-    app,
-  )
-  .listen(process.env.PORT);
+const options = {
+  key: privateKey,
+  cert: certificate,
+};
 
 app.use((_, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
@@ -33,3 +28,5 @@ app.get('/estimated-fees', (_, res) => {
 app.get('/health', (_, res) => {
   return res.json({ status: getStatus() });
 });
+
+https.createServer(options, app).listen(process.env.PORT);
