@@ -21,6 +21,7 @@ https
   .listen(process.env.PORT);
 
 app.all('/', function (_, res, next) {
+  console.log('Add headers');
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'X-Requested-With');
   next();
