@@ -3,7 +3,9 @@ import 'dotenv/config';
 import express from 'express';
 import fs from 'fs';
 import https from 'https';
+
 import estimatedFees from './estimated-fees.js';
+import { health } from './health.js';
 
 var privateKey = fs.readFileSync('./ssl/privatekey.pem');
 var certificate = fs.readFileSync('./ssl/certificate.pem');
