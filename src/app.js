@@ -20,8 +20,7 @@ https
   )
   .listen(process.env.PORT);
 
-app.all('/', function (_, res, next) {
-  console.log('Add headers');
+app.use((_, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'X-Requested-With');
   next();
