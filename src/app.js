@@ -20,6 +20,12 @@ https
   )
   .listen(process.env.PORT);
 
+app.all('/', function (_, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With');
+  next();
+});
+
 app.get('/estimated-fees', (_, res) => {
   res.send(estimatedFees());
 });
